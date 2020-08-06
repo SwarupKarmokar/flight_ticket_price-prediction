@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wellcome</title>
+    <style>
+        body{
+            background-color: aqua;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h4>Flight Ticket Price</h4>
+        <form action="{{url_for('predict')}}" method="POST">
+                            <!-- Airlines Dropdown -->
+                            <select class="form-input align-center" name="Airline">
+                                <option value="none">----------- Select a Airline -----------</option>
+                                <option value="Air Asia">Air Asia</option>
+                                <option value="Air India">Air India</option>
+                                <option value="GoAir">GoAir</option>
+                                <option value="IndiGo">IndiGo</option>
+                                <option value="Jet Airways">Jet Airways</option>
+                                <option value="Jet Airways Business">Jet Airways Business</option>
+                                <option value="Multiple carriers">Multiple carriers</option>
+                                <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                                <option value="SpiceJet">SpiceJet</option>
+                                <option value="Trujet">Trujet</option>
+                                <option value="Vistara">Vistara</option>
+                                <option value="Vistara Premium economy">Vistara Premium economy</option>
+                            </select><br>
+                            <select class="form-input align-center" name="Source">
+                                <option value="none">--- Select Source ---</option>
+                                <option value="Banglore">Banglore</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Mumbai">Mumbai</option>
+                            </select><br>
+
+                            <select class="form-input align-center" name="Destination">
+                                <option value="none">--- Select Destination ---</option>
+                                <option value="Banglore">Banglore</option>
+                                <option value="Cochin">Cochin</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="New Delhi">New Delhi</option>
+                            </select><br>
+
+                            <select class="form-input align-center" name="Total_Stops">
+                                <option value="none">--- Select Stops ---</option>
+                                <option value="1.0">1.0</option>
+                                <option value="2.0">2.0</option>
+                                <option value="3.0">3.0</option>
+                                <option value="4.0">4.0</option>
+                            </select><br>
+
+                            <input type="submit" class="myButton" value="Predict">
+            </form>
+                <div>
+                    {{prediction_text}}
+                </div>
+</body>
+</html>
